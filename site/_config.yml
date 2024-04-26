@@ -4,7 +4,5 @@ defaults:
   -
     scope:
       path: ""
-      type: "posts"
     values:
       layout: "default"
-      permalink: "/:path/:categories/:basename"
