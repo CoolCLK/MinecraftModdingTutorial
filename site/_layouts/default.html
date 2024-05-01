@@ -66,6 +66,19 @@
                 flex-basis: auto;
             }
         </style>
+        <script>
+            window.onload = function() {
+                document.getElementById('markdownContainer').contentDocument.innerHTML = `<html lang=&quot;zh-CN&quot;>
+                    <head>
+                        <title>{{ page.title }}</title>
+                        <link rel="stylesheet" href="{% include markdown-style.css %}">
+                    </head>
+                    <body>
+                        {{ content }}
+                    </body>
+                </html>`;
+            }
+        </script>
     </head>
     <body>
         <div class="navigation-menu" onselectstart="return false;" unselectable="on">
@@ -90,16 +103,7 @@
             </details>
         </div>
         <div class="markdown-container">
-            <iframe id="markdownContainer" title="{{ page.title }}" srcdoc="
-            <html lang=&quot;zh-CN&quot;>
-                <head>
-                    <title>{{ page.title }}</title>
-                    <link rel=&quot;stylesheet&quot; href=&quot;{% include markdown-style.css %}&quot;>
-                </head>
-                <body>
-                    {{ content | replace: '&quot', &quot }}
-                </body>
-            </html>">
+            <iframe id="markdownContainer" title="{{ page.title }}">
             </iframe>
         </div>
     </body>
