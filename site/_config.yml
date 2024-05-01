@@ -6,5 +6,3 @@ defaults:
       path: ""
     values:
       layout: "default"
-
-baseurl: https://coolclk.github.io/MinecraftModdingTutorial/
