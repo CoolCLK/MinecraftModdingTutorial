@@ -71,7 +71,7 @@
                 document.getElementById('markdownContainer').contentDocument.write(`<html lang=&quot;zh-CN&quot;>
                     <head>
                         <title>{{ page.title }}</title>
-                        <link rel="stylesheet" href="{% include markdown-style.css %}">
+                        <style>{% include markdown-style.css %}</style>
                     </head>
                     <body>
                         {{ content }}
