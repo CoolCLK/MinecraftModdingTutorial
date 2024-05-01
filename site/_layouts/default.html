@@ -67,15 +67,17 @@
             }
         </style>
         <script>
-            const markdownContainer = document.getElementById('markdownContainer');
-            if (markdownContainer.attachEvent) {
-                markdownContainer.attachEvent("onload", function() {
-                    const doc = markdownContainer.contentDocument;
-                    var cssLink = doc.createElement('link');
-                    cssLink.href = '{% include markdown-style.css %}';
-                    cssLink.rel = 'stylesheet';
-                    doc.getElementsByTagName('head').item(0).appendChild(cssLink);
-                });
+            window.onload = function() {
+                const markdownContainer = document.getElementById('markdownContainer');
+                if (markdownContainer.attachEvent) {
+                    markdownContainer.attachEvent("onload", function() {
+                        const doc = markdownContainer.contentDocument;
+                        var cssLink = doc.createElement('link');
+                        cssLink.href = '{% include markdown-style.css %}';
+                        cssLink.rel = 'stylesheet';
+                        doc.getElementsByTagName('head').item(0).appendChild(cssLink);
+                    });
+                }
             }
         </script>
     </head>
