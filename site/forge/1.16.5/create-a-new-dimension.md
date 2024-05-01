@@ -103,7 +103,7 @@ categories:
             "type": "block", // 此处只演示 block 模式，详见 https://minecraft.fandom.com/zh/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%96%E7%95%8C%E7%94%9F%E6%88%90#%E5%99%AA%E5%A3%B0%E8%AE%BE%E7%BD%AE
             "reuslt_state": {
                 "Name": "minecraft:grass_block",
-            "Properties": {} // 可选，此处为空
+                "Properties": {} // 可选，此处为空
             }
         }
     },
@@ -200,7 +200,7 @@ public class ChunkGeneratorExample extends ChunkGenerator {
 
 ``` java
 static {
-    Registry.register(Registry.CHUNK_GENERATOR, "example_generator", SkyChunkGenerator.CODEC);
+    Registry.register(Registry.CHUNK_GENERATOR, "example_generator", ChunkGeneratorExample.CODEC);
 }
 ```
 
