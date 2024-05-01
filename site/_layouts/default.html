@@ -97,7 +97,7 @@
                     <link rel=&quot;stylesheet&quot; href=&quot;{% include markdown-style.css %}&quot;>
                 </head>
                 <body>
-                    {{ content }}
+                    {{ content | replace: '&quot', &quot }}
                 </body>
             </html>">
             </iframe>
