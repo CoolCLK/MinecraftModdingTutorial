@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{{ page.title }} - Minecraft 模组教程 - CoolCLK</title>
+        <link rel="stylesheet" type="text/css" href="{% include markdown_style.css %}">
+        <style>
+            html {
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                margin: 0;
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+
+            .navigation-menu {
+                height: 100%;
+                width: 12em;
+                margin: 1em;
+                overflow: auto;
+            }
+
+            .navigation-menu .item {
+                position: relative;
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .navigation-menu .item::before {
+                content: '';
+                position: absolute;
+                bottom: -12.5%;
+                transform: scale(0, 1);
+                transform-origin: 0 0;
+                width: 100%;
+                height: 0.0625em;
+                background: black;
+                transition: transform .2s ease;
+            }
+
+            .navigation-menu .item:hover::before {
+                transform: scale(1, 1);
+            }
+
+            .navigation-menu .item:hover {
+                cursor: pointer;
+            }
+
+            .markdown-container {
+                overflow: auto;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navigation-menu" onselectstart="return false;" unselectable="on">
+            <details class="group">
+                <summary>
+                    <a class="item" href="{{ site.url }}/forge/index.html">Forge 教程</a>
+                </summary>
+                <details class="group">
+                    <summary>
+                        <a class="item" href="{{ site.url }}/forge/1.16.5/index.html">1.16.5</a>
+                    </summary>
+                    <a class="item" href="{{ site.url }}/forge/1.16.5/create-a-new-item.html">创建一个新物品</a><br>
+                    <a class="item" href="{{ site.url }}/forge/1.16.5/create-a-new-dimension.html">创建一个新维度</a>
+                </details>
+            </details>
+            <details class="group">
+                <summary>
+                    <a class="item" href="{{ site.url }}/forge/index.html">Java 教程</a>
+                </summary>
+                <a class="item" href="{{ site.url }}/forge/1.16.5/class.html">类</a><br>
+                <a class="item" href="{{ site.url }}/forge/1.16.5/variable.html">变量</a>
+            </details>
+        </div>
+        <div class="markdown-container">
+            <div class="markdown">
+                {{ content }}
+            </div>
+        </div>
+    </body>
+</html>
