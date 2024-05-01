@@ -14,4 +14,4 @@ categories:
 
 > 对于想要学习更多的用户，可以前往 [Runoob Java 教程](https://www.runoob.com/java) 学习
 
-**变量**
+**变量 *(Variable)***

@@ -35,7 +35,7 @@
             .navigation-menu .item::before {
                 content: '';
                 position: absolute;
-                bottom: -12.5%;
+                bottom: 0;
                 transform: scale(0, 1);
                 transform-origin: 0 0;
                 width: 100%;
@@ -66,45 +66,41 @@
                 flex-basis: auto;
             }
         </style>
-        <script>
-            window.onload = function() {
-                const markdownContainer = document.getElementById('markdownContainer');
-                if (markdownContainer.attachEvent) {
-                    markdownContainer.attachEvent("onload", function() {
-                        const doc = markdownContainer.contentDocument;
-                        var cssLink = doc.createElement('link');
-                        cssLink.href = '{% include markdown-style.css %}';
-                        cssLink.rel = 'stylesheet';
-                        doc.getElementsByTagName('head').item(0).appendChild(cssLink);
-                    });
-                }
-            }
-        </script>
     </head>
     <body>
         <div class="navigation-menu" onselectstart="return false;" unselectable="on">
-            <details class="group">
+            <details>
                 <summary>
                     <a class="item" href="{{ site.baseurl }}/forge/index.html">Forge 教程</a>
                 </summary>
-                <details class="group">
+                <details style="transform: translate(1em, 0);">
                     <summary>
                         <a class="item" href="{{ site.baseurl }}/forge/1.16.5/index.html">1.16.5</a>
                     </summary>
-                    <a class="item" href="{{ site.baseurl }}/forge/1.16.5/create-a-new-item.html">创建一个新物品</a><br>
-                    <a class="item" href="{{ site.baseurl }}/forge/1.16.5/create-a-new-dimension.html">创建一个新维度</a>
+                    <a class="item" href="{{ site.baseurl }}/forge/1.16.5/create-a-new-item.html" style="transform: translate(2em, 0);">创建一个新物品</a><br>
+                    <a class="item" href="{{ site.baseurl }}/forge/1.16.5/create-a-new-dimension.html" style="transform: translate(2em, 0);">创建一个新维度</a>
                 </details>
             </details>
-            <details class="group">
+            <details>
                 <summary>
                     <a class="item" href="{{ site.baseurl }}/java/index.html">Java 教程</a>
                 </summary>
-                <a class="item" href="{{ site.baseurl }}/java/class.html">类</a><br>
-                <a class="item" href="{{ site.baseurl }}/java/variable.html">变量</a>
+                <a class="item" href="{{ site.baseurl }}/java/class.html" style="transform: translate(1em, 0);">类</a><br>
+                <a class="item" href="{{ site.baseurl }}/java/variable.html" style="transform: translate(1em, 0);">变量</a>
             </details>
         </div>
         <div class="markdown-container">
-            <iframe id="markdownContainer" title="{{ page.title }}" srcdoc="{{ content }}"></iframe>
+            <iframe id="markdownContainer" title="{{ page.title }}" srcdoc="
+            <html lang=&quot;zh-CN&quot;>
+                <head>
+                    <title>{{ page.title }}</title>
+                    <link rel=&quot;stylesheet&quot; href=&quot;{% include markdown-style.css %}&quot;>
+                </head>
+                <body>
+                    {{ content }}
+                </body>
+            </html>">
+            </iframe>
         </div>
     </body>
 </html>
