@@ -183,7 +183,7 @@ public class ChunkGeneratorExample extends ChunkGenerator {
 
     @Override
     public int getBaseHeight(int x, int y, @Nonnull Heightmap.Type type) {
-        return 0;
+        return 0; // 这个世界的基础高度
     }
 
     @Override
